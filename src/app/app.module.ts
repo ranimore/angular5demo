@@ -7,12 +7,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CrudComponent } from './crud/crud.component';
+import { CrudService } from './crud.service';
 const appRoutes: Routes = [{
   
-          path: 'home', component: HomeComponent,
+          path: '', component: HomeComponent,
     },
     {
       path: 'about', component: AboutComponent,
+    },
+    {
+      path: 'crud', component: CrudComponent,
     }
    
 ]
@@ -20,7 +25,8 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ const appRoutes: Routes = [{
       appRoutes
     )
   ],
-  providers: [],
+  providers: [CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
